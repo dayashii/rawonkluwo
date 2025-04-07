@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warung Kita POS - Home</title> <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Warung Kita POS</h1>
+            <nav>
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="menu.html" class="nav-link">Order Menu</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page-content">
+        <h2>Welcome!</h2>
+        <p>Your simple and efficient Point of Sale solution for managing orders.</p>
+        <p>Navigate to the Order Menu to start taking orders.</p>
+        <a href="menu.html" class="button button-primary">Go to Order Menu</a>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Warung Kita. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script for dynamic year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
