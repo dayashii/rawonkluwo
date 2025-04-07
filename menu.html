@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prototype 917 POS - Menu Pesanan</title>
+    <title>Rawon Kluwek - Menu Pesanan</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="site-header">
         <div class="container">
-            <h1>Prototype 917 POS</h1>
+            <h1>Rawon Kluwek POS</h1>
             <nav>
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="menu.html" class="nav-link active">Order Menu</a>
@@ -43,18 +43,28 @@
 
         <div class="saved-orders-section">
              <h2>Save / Load Order</h2>
-             <div class="save-controls">
-                 <input type="text" id="customer-name-input" placeholder="Customer Name / Table #..." required>
+             <div class="save-controls action-buttons"> <input type="text" id="customer-name-input" placeholder="Customer Name / Table #..." required>
                  <button id="save-order-button" class="button button-success">Save Current Order</button>
-            </div>
-             <h3>Saved Orders:</h3>
-             <p><small>Click on an order below to load it.</small></p>
+                 <button id="show-history-button" class="button button-secondary">Order History</button>
+                 <button id="export-txt-button" class="button button-secondary">Export TXT</button>
+                 <button id="export-csv-button" class="button button-secondary">Export CSV</button>
+                 </div>
+             <h3>Saved Orders (for loading):</h3> <p><small>Click on an order below to load it.</small></p>
              <ul id="saved-orders-list">
                  <li>No saved orders yet.</li>
              </ul>
         </div>
 
-    </main>
+        <div id="history-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>Order History (Last 10)</h2>
+                <div id="history-content">
+                    <p>Loading history...</p>
+                </div>
+            </div>
+        </div>
+        </main>
 
     <footer class="site-footer">
         <div class="container">
