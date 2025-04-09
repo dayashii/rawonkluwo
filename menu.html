@@ -35,36 +35,38 @@
 
             <div class="summary">
                 <h2>HARGA TOTAL: <span id="total-price">Rp 0</span></h2>
-                <button id="reset-button" class="button button-danger">RESET ORDER</button>
+                <button id="reset-button" class="button button-danger">RESET FORM</button>
             </div>
         </div>
 
         <hr>
 
-        <div class="saved-orders-section">
-             <h2>Save / Load Order</h2>
-             <div class="save-controls action-buttons"> <input type="text" id="customer-name-input" placeholder="Customer Name / Table #..." required>
-                 <button id="save-order-button" class="button button-success">Save Current Order</button>
-                 <button id="show-history-button" class="button button-secondary">Order History</button>
+        <div class="order-actions-section">
+             <h2>Order Actions & History</h2>
+             <div class="action-buttons">
+                 <input type="text" id="customer-name-input" placeholder="Customer Name / Table #..." required>
+                 <button id="save-active-button" class="button button-primary">Save as Active / Update</button>
+                 <button id="show-history-button" class="button button-secondary">View History</button>
                  <button id="export-txt-button" class="button button-secondary">Export TXT</button>
                  <button id="export-csv-button" class="button button-secondary">Export CSV</button>
-                 </div>
-             <h3>Saved Orders (for loading):</h3> <p><small>Click on an order below to load it.</small></p>
-             <ul id="saved-orders-list">
-                 <li>No saved orders yet.</li>
-             </ul>
+                 <button id="clear-history-button" class="button button-danger">Clear All History</button>
+            </div>
+             <h3>Active Orders (for loading/action):</h3> <p><small>Click order info to load. Use buttons for actions.</small></p>
+             <ul id="loadable-orders-list"> <li>No active orders saved yet.</li>
+                 </ul>
         </div>
 
         <div id="history-modal" class="modal">
             <div class="modal-content">
                 <span class="close-button">&times;</span>
-                <h2>Order History (Last 10)</h2>
+                <h2>Complete Order History</h2>
                 <div id="history-content">
                     <p>Loading history...</p>
                 </div>
             </div>
         </div>
-        </main>
+
+    </main>
 
     <footer class="site-footer">
         <div class="container">
@@ -74,8 +76,10 @@
 
     <script src="script.js"></script>
      <script>
-        // Simple script for dynamic year in footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
+        const yearSpan = document.getElementById('current-year');
+        if(yearSpan) {
+           yearSpan.textContent = new Date().getFullYear();
+        }
+     </script>
 </body>
 </html>
